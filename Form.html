@@ -1,0 +1,109 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head> 
+    <title>Form</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="formstyle.css"/>
+    <script type="text/javascript" src = "validate.js"></script>
+    <script>
+        function validate(form) {
+        fail = validateCheeseChecks(form)
+        fail += validateFirstName(form.first_name.value)
+        fail += validateLastName(form.last_name.value)
+        fail += validateEmail(form.Email.value)
+        fail += validateNumber(form.number.value)
+        fail += validateAddress(form.address.value)
+        fail += validateQuantity(form.quantity.value)
+        fail += validateDevice(form.Device.value)
+        fail += validateRadioCompany(form)
+        if (fail == "") return true
+        else { alert(fail); return false }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div id="main">
+        </div>
+        <div id="picture">
+            <img src="images/ElectronicItems.jpg" alt="ElectronicItems">
+        </div>
+    </header>
+</body>
+</html>
+
+<form class= "contact_form" action="process.php" method="post" name="contact_form" onSubmit="return validate(this)">
+
+    <h2> Repairs Form</h2>
+    <h4>Contact Information</h4>
+
+    <div class "nameinfo">
+        <label> First:
+        <input type="text" name="first_name" placeholder="John" required/></label>
+        <label> Last:
+        <input type="text" name="last_name" placeholder="Doe" required/></label>
+    </div>
+
+    <div class="emailinfo">
+        <label> Email: 
+        <input type="email" name="Email" placeholder="JohnDoe@email.com" required/></label>
+    </div>
+
+    <div class="telephoneinfo">
+        <label> Telephone Number:
+        <input type="tel" name="number" placeholder="(805)630-1566" required/></label>
+    </div>
+
+    <div class="quantityinfo">
+        <h4> Fill in Below: </h4>
+        <div class="quantityinfo">
+        <label> What's wrong with your device?: 
+        <input type="content" name= "device" required/></label>
+    </div>
+        </label>
+    </div>
+
+    <div class="deviceinfo">
+        <label> What is wrong with your device? :
+        <select name="Device" id = "Deviceselect">
+        <option value = "blank" selected> Choose a device </option>
+        <option value="Lap-top">Lap-top computer</option>
+        <option value="MP3">MP3 player</option>
+        <option value="Desktop">Desktop Computer</option>
+        <option value="Phone">Mobile Phone</option>
+        <option value="Entertainment">Entertainment Systems</option>
+        <option value="Wifi">Wireless internet</option>
+        </select>
+        </label>
+    </div>
+
+    <div class="companyinfo">
+        <ul>
+        <label> Select the products company:</label>
+        <li> <input type="checkbox" name="company" value="Apple"> Apple </li>
+        <li> <input type="checkbox" name="company" value="Sony"> Sony </li>
+        <li> <input type="checkbox" name="company" value="LG"> LG </li>
+        <li> <input type="checkbox" name="company" value="Dell"> Dell </li>
+        <li> <input type="checkbox" name="company" value="Microsoft"> Microsoft </li>
+        <li> <input type="checkbox" name="company" value="Bose"> Bose </li>
+        <li> <label> Other: <input type="content" name="company" required/></label></li>
+        </ul>
+    </div>
+
+    <div class="extrainfo">
+        <label> Does the device power on? </label>
+        <input type="radio" name = "radio" value="Yes"> Yes 
+        <input type="radio" name = "radio" value="No"> No 
+    </div>
+
+
+    <div class="additionalinfo">
+        <p> Anything else we should know?</p>
+            <textarea> </textarea>
+    </div>
+
+    <div>
+    <button class="submit" onclick="alert('Are you sure you want to submit')" type="submit"> Submit Request</button>
+    </div>
+
+</form>

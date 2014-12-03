@@ -1,0 +1,432 @@
+html, body {
+  height: 100%;
+}
+
+body { 
+  text-align: center;
+  color: black;
+  -webkit-animation: background-color 1s forwards;
+  animation: background-color 1s forwards;
+  margin: 0;
+}
+
+#intosh-logo-tm {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#intosh-logo-tm a {
+  color:black;
+}
+
+h1, h2 {
+  display: inline-block;
+  opacity: 0;
+  -webkit-animation: fade-in 1s 3s forwards;
+  animation: fade-in 1s 3s forwards;
+}
+
+h1 {
+  font-family: Georgia;
+  font-size: 41px;
+  -webkit-transform: scale(1.5, 1);
+  transform: scale(1.5, 1);
+  margin: 0 0 35px 0;
+}
+
+h2 {
+  font-family: Georgia;
+  font-weight: normal;
+  font-size: 28px;
+  -webkit-transform: scale(1.2, 1);
+  transform: scale(1.2, 1);
+  margin: 40px 0 0 0;
+}
+
+h2 span {
+  font-size: 19px;
+  display: block;
+  line-height: 5px;
+}
+
+#diamond {
+  margin: 0 auto;
+  width: 160px;
+  height: 160px;
+  background-image: linear-gradient(-45deg, blue, purple, red, orange, yellow, green);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: relative;
+  opacity: 0;
+  -webkit-animation: fade-in 1s 1s forwards;
+  animation: fade-in 1s 1s forwards;
+}
+
+@media only screen and (max-width:800px) { 
+ body{
+  margin-top:30px;
+  height:75%;}
+ }
+
+
+
+/* webkit keyframes */
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes background-color {
+  from {
+    background: black;
+  }
+  
+  to {
+    background: white;
+  }
+}
+
+@-webkit-keyframes diamond-before-after-animation {
+  0% { 
+    width: 100%;
+    height: 100%;
+  }
+  
+  100% {
+    width: 40%;
+    height: 40%;
+  }
+}
+
+@-webkit-keyframes diamond-before-animation {
+  0% { 
+    left: 0;
+    top: 0;
+  }
+  
+  100% {
+    left: 15%;
+    top: 10%;
+  }
+}
+
+@-webkit-keyframes diamond-after-animation {
+  0% { 
+    right: 0;
+    bottom: 0;
+  }
+  
+  100% {
+    right: 15%;
+    bottom: 10%;
+  }
+}
+
+/* standard keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes background-color {
+  from {
+    background: black;
+  }
+  
+  to {
+    background: white;
+  }
+}
+
+@keyframes diamond-before-after-animation {
+  0% { 
+    width: 100%;
+    height: 100%;
+  }
+  
+  100% {
+    width: 40%;
+    height: 40%;
+  }
+}
+
+@keyframes diamond-before-animation {
+  0% { 
+    left: 0;
+    top: 0;
+  }
+  
+  100% {
+    left: 15%;
+    top: 10%;
+  }
+}
+
+@keyframes diamond-after-animation {
+  0% { 
+    right: 0;
+    bottom: 0;
+  }
+  
+  100% {
+    right: 15%;
+    bottom: 10%;
+  }
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: #f0f0f0;
+  font-family: Helvetica, sans-serif;
+  height: 100%;
+}
+
+.main-menu {
+  margin: auto;
+  width: 960px;
+  text-align: center;
+  position: relative;
+  list-style-type: none;
+  margin-top: 2em;
+}
+
+.main-menu::after,
+.main-menu-item.active::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+}
+
+.main-menu::after {
+  width: 70%;
+  height: 2px;
+  background: #9B1C27;
+  animation: menuLine 1s ease forwards;
+  transform: scaleX(0);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
+}
+
+@keyframes menuLine{
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes menuItem {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+*, *:after, *:before {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: #f0f0f0;
+  font-family: Helvetica, sans-serif;
+  height: 100%;
+}
+
+.main-menu {
+  margin: auto;
+  width: 960px;
+  text-align: center;
+  position: relative;
+  list-style-type: none;
+  margin-top: 2em;
+}
+
+.main-menu::after,
+.main-menu-item.active::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+}
+
+.main-menu::after {
+  width: 70%;
+  height: 2px;
+  background: #9B1C27;
+  -webkit-animation: menuLine 1s ease forwards;
+          animation: menuLine 1s ease forwards;
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
+}
+
+@-webkit-keyframes menuLine {
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes menuLine {
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes menuItem {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes menuItem {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,,800,900);
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: -webkit-linear-gradient(#ebece7, white);
+  background: linear-gradient(#ebece7, white);
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+}
+
+.container {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.title {
+  font-weight: 800;
+  color: transparent;
+  font-size: 120px;
+  background: url("http://www.tntnphotos.com/wp-content/uploads/Retro_apple_logo_by_mcdeesh1-e1347474451835.jpg");
+  background-position: 40% 50%;
+  -webkit-background-clip: text;
+  position: relative;
+  text-align: center;
+  line-height: 90px;
+  letter-spacing: -8px;
+}
+
+.subtitle {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 10px;
+
+}
+
+
+
+@media only screen and (max-width:800px) { 
+ .title{
+  font-size:80px;
+  line-height: 60px;
+   }
+ }
+
+
+
+/* I am a */
+
+body {
+  background: #f1f1f1;
+  color: #222;
+  font-family: 'Raleway', sans-serif;
+}
+
+.wrapper {
+  padding:100px;
+  width: 500px;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-top:420px;
+  position:relative;
+}
+
+.roles {
+    font-size: 30px;
+    height: 50px;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.roles div {
+    height: 50px;
+    -webkit-transition: margin-top 1s ease-in-out;
+            transition: margin-top 1s ease-in-out;
+}
+
+
+@media only screen and (max-width:800px) { 
+ .roles{
+  display:none;
+
+   }
+ }
+
+nav {
+  display:block;
+  background:black;
+  width:auto;
+  float:left;
+
+}
+
+nav ul li {
+  display:inline-block;
+  padding: 15px 25px;
+}
+
+nav ul li a { 
+    color:white;
+    font-family:Helvetica;
+    }
+
+
